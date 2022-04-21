@@ -27,9 +27,6 @@ class program
                 case 4:
                     contact.Delete();
                     break;
-                case 5:
-                    contact.AddMultipleContacts();
-                    break;
                 case 0:
                     check = false;
                     break;
