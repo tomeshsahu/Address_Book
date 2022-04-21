@@ -92,7 +92,19 @@ namespace Address_Book
             }
 
         }
-            
+        public void Delete()
+        {
+            Contact delete = new Contact();
+            Console.WriteLine("To Delete Contact List Enter FirstName");
+            string name = Console.ReadLine();
+            if (contact.FirstName.Equals(name))
+            {
+                delete = contact;
+            }
+            Contact.Remove(delete);
+            Display();
+        }
+
 
     }
 }

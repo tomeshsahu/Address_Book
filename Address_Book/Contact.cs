@@ -17,6 +17,10 @@ namespace Address_Book
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
 
+        internal static void Remove(Contact delete)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

@@ -12,10 +12,10 @@ class program
         AddressBook book = new AddressBook();
 
 
-
-        while (true)
+        bool check = true;
+        while (check)
         {
-            Console.WriteLine("Select Number\n1.Add Contact\n2.Display Contact\n3.Update Contact");
+            Console.WriteLine("Select Number\n1.Add Contact\n2.Display Contact\n3.Update Contact\n4.Delete Contact");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -28,6 +28,15 @@ class program
                 case 3:
                     book.Update();
                     break;
+                case 4:
+                    book.Delete();
+                    break;
+
+                case 0:
+                    check=false;
+                    Console.WriteLine("Program Is Ended");
+                    break;
+
             }
         }
 
