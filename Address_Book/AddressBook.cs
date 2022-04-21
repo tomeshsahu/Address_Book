@@ -10,8 +10,13 @@ namespace Address_Book
     {
         public string WelcomeMessage()
         {
+<<<<<<< Updated upstream
             string mesaage = "Welcome In This Project";
             return mesaage;
+=======
+            string message = "Welcome In This Project";
+            return message;
+>>>>>>> Stashed changes
         }
     }
 }

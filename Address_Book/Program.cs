@@ -4,6 +4,8 @@ class program
 {
     public static void Main(String[] args)
     {
+        AddressBook obj=new AddressBook();
+       Console.WriteLine(obj.WelcomeMessage());
         Console.WriteLine("Enter the Address Details");
         Contact contact = new Contact();
         Console.WriteLine("Enter FirstName");
