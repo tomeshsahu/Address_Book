@@ -11,7 +11,7 @@ class program
         bool check = true;
         while (check)
         {
-            Console.WriteLine("1.Add Contact\n2.Display Contact\n3.Update Contact");
+            Console.WriteLine("1.Add Contact\n2.Display Contact\n3.Update Contact\n4.Delete Contact\n5.Multiple Contact");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -23,6 +23,12 @@ class program
                     break;
                 case 3:
                     contact.Update();
+                    break;
+                case 4:
+                    contact.Delete();
+                    break;
+                case 5:
+                    contact.AddMultipleContacts();
                     break;
                 case 0:
                     check = false;
