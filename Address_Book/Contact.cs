@@ -14,7 +14,7 @@ namespace Address_Book
         public string City { get; set; }
         public string State { get; set; }
         public int Zip { get; set; }
-        public int PhoneNumber { get; set; }
+        public long PhoneNumber { get; set; }
         public string Email { get; set; }
 
         internal static void Remove(Contact delete)
