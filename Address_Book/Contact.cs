@@ -15,7 +15,19 @@ namespace Address_Book
         public string State { get; set; }
         public int Zip { get; set; }
         public long PhoneNumber { get; set; }
-        public string Email { get; set; }
+       
+        private string _Email;
+        public string Email
+        {
+            set
+            {
+                this._Email = value;
+            }
+            get
+            { 
+                return this._Email;
+            }
+        }
 
         internal static void Remove(Contact delete)
         {

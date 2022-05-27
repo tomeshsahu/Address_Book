@@ -3,6 +3,7 @@ using System;
 using Address_Book;
 class program
 {
+    
     public static void Main(String[] args)
     {
         AddressBook contact = new AddressBook();
@@ -11,7 +12,7 @@ class program
         bool check = true;
         while (check)
         {
-            Console.WriteLine("1.Add Contact\n2.Display Contact\n3.Update Contact\n4.Delete Contact\n5.Multiple Contact");
+            Console.WriteLine("1.Add Contact\n2.Display Contact\n3.Update Contact\n4.Delete Contact\n5.Add New Contact\n6.Add Dictionery\n7.Display Dictionary ");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -27,6 +28,20 @@ class program
                 case 4:
                     contact.Delete();
                     break;
+                case 5:
+                    contact.AddDetails();
+                    break;
+                case 6:
+                    Console.WriteLine("Enter FirstName ");
+                    string name=Console.ReadLine();
+                    contact.AddDictionary(name);
+                    break;
+                case 7:
+                    Console.WriteLine("Enter Name to display data in dictionary: ");
+                    string dictionary = Console.ReadLine();
+                    contact.DisplayDictionary(dictionary);
+                    break;
+
                 case 0:
                     check = false;
                     break;
