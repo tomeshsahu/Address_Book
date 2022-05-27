@@ -42,6 +42,10 @@ class program
                     contact.DisplayDictionary(dictionary);
                     break;
 
+                case 8:
+                    contact.SearchByCityState();
+                    break;
+
                 case 0:
                     check = false;
                     break;
