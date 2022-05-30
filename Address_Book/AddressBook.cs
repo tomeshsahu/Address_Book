@@ -253,7 +253,6 @@ namespace Address_Book
             return false;
         }
 
-
         public void SearchByCityState()
         {
             Console.WriteLine("Please enter the name of City or State:");
@@ -276,6 +275,15 @@ namespace Address_Book
                 }
                 Console.WriteLine("City Or State Doesnt Exists In AddressBook");
                 return;
+            }
+        }
+
+        public void SortingDataByPersonName()
+        {
+            var result = addContact.OrderBy(x => x.FirstName).ToList();
+            foreach(var contact in result)
+            {
+                Console.WriteLine(contact.FirstName + " " + contact.LastName + " " + contact.Address + " " + contact.City + " " + contact.State + " " + contact.Email + " " + " " + contact.Zip + " " + contact.PhoneNumber);
             }
         }
 
