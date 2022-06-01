@@ -49,9 +49,9 @@ namespace Address_Book
 
                 Address = "Bhilai",
 
-                City = "Bhilai",
+                City = "Mysuru",
 
-                State = "CG",
+                State = "Banglore",
 
                 Zip = 490020,
 
@@ -69,9 +69,9 @@ namespace Address_Book
 
                 Address = "Bhilai",
 
-                City = "Bhilai",
+                City = "Mumbai",
 
-                State = "CG",
+                State = "Maharasta",
 
                 Zip = 490021,
 
@@ -287,9 +287,16 @@ namespace Address_Book
             }
         }
 
+        public void SortingDataByCityStateOrZip()
+        {
+            var result=addContact.OrderBy(x=>x.City).ToList();
+            foreach(var contact in result)
+            {
+                Console.WriteLine(contact.FirstName + " " + contact.LastName + " " + contact.Address + " " + contact.City + " " + contact.State + " " + contact.Email + " " + " " + contact.Zip + " " + contact.PhoneNumber);
+            }
+        }
 
-
-
+      
     }
     }
  
