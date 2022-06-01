@@ -9,9 +9,14 @@ namespace Address_Book
 {
     public class AddressBook
     {
-        
+  
         List<Contact> addContact = new List<Contact>();
         Dictionary<string, List<Contact>> myDict = new Dictionary<string, List<Contact>>();
+
+        const string FilePath = @"E:\AddressBook\Address_Book\Address_Book\AddressBook.CSV";
+        const string Export = @"E:\AddressBook\Address_Book\Address_Book\addressBookExport.CSV";
+        const string Text = @"E:\AddressBook\Address_Book\Address_Book\addressBook.txt";
+
 
         public void AddContact()
         {
@@ -293,6 +298,27 @@ namespace Address_Book
             foreach(var contact in result)
             {
                 Console.WriteLine(contact.FirstName + " " + contact.LastName + " " + contact.Address + " " + contact.City + " " + contact.State + " " + contact.Email + " " + " " + contact.Zip + " " + contact.PhoneNumber);
+            }
+        }
+
+        public void FileReading()
+        { 
+            if (File.Exists(FilePath))
+            {
+                StreamReader read=new StreamReader(FilePath);
+                try
+                {
+                    string s = "";
+                    while((s=read.ReadLine())!=null)
+                    {
+                        Console.WriteLine(s);
+                    }
+                    read.Close();
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
             }
         }
 
