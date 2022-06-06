@@ -12,13 +12,10 @@ namespace Address_Book
         
         List<Contact> addContact = new List<Contact>();
         Dictionary<string, List<Contact>> myDict = new Dictionary<string, List<Contact>>();
-
         public void AddContact()
         {
-
             Console.WriteLine("Enter the Address Details");
             Console.WriteLine("1-FirstName 2-LastName 3-Address 4-City 5-State 6-Zip 7-PhoneNumber 8-Email");
-
             Contact contact1 = new Contact()
             {
 
@@ -287,7 +284,7 @@ namespace Address_Book
             }
         }
 
-        public void SortingDataByCityStateOrZip()
+        public void SortingDataByCity()
         {
             var result=addContact.OrderBy(x=>x.City).ToList();
             foreach(var contact in result)
@@ -295,6 +292,49 @@ namespace Address_Book
                 Console.WriteLine(contact.FirstName + " " + contact.LastName + " " + contact.Address + " " + contact.City + " " + contact.State + " " + contact.Email + " " + " " + contact.Zip + " " + contact.PhoneNumber);
             }
         }
+        public void SortingDataByState()
+        {
+            var result = addContact.OrderBy(x => x.State).ToList();
+            foreach(var contact in result)
+            {
+                Console.WriteLine(contact.FirstName + " " + contact.LastName + " " + contact.Address + " " + contact.City + " " + contact.State + " " + contact.Email + " " + " " + contact.Zip + " " + contact.PhoneNumber);
+            }
+        }
+
+
+        public void FileReading()
+        {
+            string FilePath = @"E:\AddressBook\Address_Book\Address_Book\addressBook.txt";
+            if (File.Exists(FilePath))
+            {
+                StreamReader read=new StreamReader(FilePath);
+                try
+                {
+                    string s = "";
+                    while((s=read.ReadLine())!=null)
+                    {
+                        Console.WriteLine(s);
+                    }
+                    read.Close();
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
+            }
+        }
+
+        public void ReadFileIO()
+        {
+            string path = @"E:\AddressBook\Address_Book\Address_Book\AddressBook.CSV";
+            string lines;
+            lines=File.ReadAllText(path);
+            Console.WriteLine("Reading All Text");
+            Console.WriteLine(lines);
+        }
+
+
+
 
       
     }

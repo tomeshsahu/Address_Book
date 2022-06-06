@@ -12,7 +12,10 @@ class program
         bool check = true;
         while (check)
         {
-            Console.WriteLine("1.Add Contact\n2.Display Contact\n3.Update Contact\n4.Delete Contact\n5.Add New Contact\n6.Add Dictionery\n7.Display Dictionary\n8.Search By City & State\n9.Sorting IN Alfabetical\n10.Sorting According ToCity");
+
+            
+
+            Console.WriteLine("1.Add Contact\n2.Display Contact\n3.Update Contact\n4.Delete Contact\n5.Add New Contact\n6.Add Dictionery\n7.Display Dictionary\n8.Search By City & State\n9.Sorting IN Alfabetical\n10.Sorting According ToCity\n11.SortingDataBy State\n12.FileReading\n13.Reading All Text");
             int option = Convert.ToInt32(Console.ReadLine());
             switch (option)
             {
@@ -50,11 +53,17 @@ class program
                     contact.SortingDataByPersonName();
                     break;
                 case 10:
-                    contact.SortingDataByCityStateOrZip();
+                    contact.SortingDataByCity();
                     break;
 
-                case 11:
-                    contact.sorting();
+                    case 11:
+                    contact.SortingDataByState();
+                    break;
+                case 12:
+                    contact.FileReading();
+                    break;
+                case 13:
+                    contact.ReadFileIO();
                     break;
 
                 case 0:
